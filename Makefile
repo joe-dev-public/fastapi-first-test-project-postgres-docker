@@ -13,3 +13,8 @@ down:
 
 bash:
 	docker exec -it $(CONTAINER_NAME) bash
+
+# Todo: store the DB name in one place and access it both here and in init-user-db.sh
+psql:
+	docker exec -it $(CONTAINER_NAME) bash -c "su postgres -c 'psql -d fastapi_first_project'"
+
